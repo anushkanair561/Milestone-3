@@ -1,15 +1,55 @@
-# The code was developed based on OpenAI File Search API. The code is further revised with the help of GitHub Copilot
-#pip install --upgrade openai
-import streamlit as st
 import openai
+from openai import OpenAI
+import os
+import base64
+import requests
+import streamlit as st
 import os
 from openai import OpenAI, AssistantEventHandler
 
-# Set up OpenAI API key
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
+
+uploaded_file = st.file_uploader("Choose a picture file", type=["png", "jpg", "jpeg"])
+
 openai.api_key = os.environ["OPENAI_API_KEY"]
 client = OpenAI()
 
-# Create the assistant
+os.makedirs('images', exist_ok=True)
+
+def photo_rec(image_path):
+    base64_image = encode_image(image_path)
+    response = client.chat.completions.create(
+    model="gpt-4-turbo",
+    messages=[
+        {
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "What is the name of the park in the image?"},
+            {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/png;base64,{base64_image}",
+            },
+            },
+        ],
+        }
+    ],
+    max_tokens=300,
+    )
+    return response.choices[0].message.content
+
+
+if uploaded_file is not None:
+    with open(os.path.join('images',uploaded_file.name), 'wb') as f:
+        f.write(uploaded_file.getbuffer())
+    st.success("Saved File:{} to images".format(uploaded_file.name))
+    image_path = os.path.join('images',uploaded_file.name)
+    st.image(image_path)
+    content = photo_rec(image_path)
+    st.write(content)
+
 assistant = client.beta.assistants.create(
     name="Parks & Recreation Reservation System",
     instructions="You are a parks and recreation reservation assistant. Use your knowledge base to answer questions about the parks",
@@ -48,31 +88,18 @@ message_file = client.files.create(
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
-
-# Display chat history
-# Streamlit UI
-st.title("Parks & Recreations Assistant Chat Interface")
-
-# Display chat history
-for message in st.session_state.chat_history:
-    role, content = message.split(" > ", 1)
-    if role == "user":
-        st.write(f"**User:** {content}")
-    else:
-        st.write(f"**Assistant:** {content}")
-
 # User input
-user_input = st.text_input("Ask a question about the parks and recreations in San Jose:")
+user_input = st.text_input(f"What would you like to know about this park or rec center?")
 
 # Send message to assistant
 if st.button("Send"):
     if user_input:
-        st.session_state.chat_history.append(f"user > {user_input}")
+        st.session_state.chat_history.append(f"user > {user_input} about {content}")
         thread = client.beta.threads.create(
             messages=[
                 {
                     "role": "user",
-                    "content": user_input,
+                    "content": f"{user_input} about {content}",
                 }
             ]
         )
