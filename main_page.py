@@ -12,16 +12,42 @@ st.write(message)
 st.image("https://sanjosespotlight.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/07/28102515/DSC_0610-4-1160x560.jpg")
 
 st.divider()
-message = "##### Do you want to discover new places just for you? Click below!"
+
+message = "#### Do you want to discover new places just for you? Click below!"
 st.write(message)
 st.link_button("Parks & Rec in San Jose", "https://www.yelp.com/search?find_desc=Parks+And+Recreation&find_loc=San+Jose%2C+CA")
+st.divider()
 
+st.markdown("### San Jose Park Video")
+
+def park_video(option):
+   if option == "Almaden Lake Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=ASWa2HQvixY"
+   elif option == "Alum Rock Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=c7YqiWIxEF0"
+   elif option == "Emma Prusch Farm Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=zWckXvI8SWU"
+   elif option == "Kelley Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=XoxiwPgz_hc"
+   elif option == "Lake Cunningham Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=kj1z2R6pMfw"
+   elif option == "Overfelt Gardens Park":
+      VIDEO_URL = "https://www.youtube.com/watch?v=04bzBx4AfQc"
+   else:
+      return None
+   
+   return st.video(VIDEO_URL)
+
+option = st.selectbox(
+    "Choose a park below to see a video of it",
+    ("Almaden Lake Park", "Alum Rock Park", "Emma Prusch Farm Park", "Kelley Park", "Lake Cunningham Park", "Overfelt Gardens Park"),
+    index=None,
+    placeholder="Select park",
+)
+
+park_video(option)
 
 st.divider()
-message = "#### Watch the video below to learn some tips to keep in mind when planning your visit"
-st.write(message)
-VIDEO_URL = "https://www.youtube.com/watch?v=60V7n3nKxvI"
-st.video(VIDEO_URL)
 
 st.subheader('Additional Assisant Features', divider='grey')
 col1, col2, col3 = st.columns(3)

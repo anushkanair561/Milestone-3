@@ -21,7 +21,7 @@ assistant = client.beta.assistants.create(
 vector_store = client.beta.vector_stores.create(name="San Jose Parks & Recreations")
 
 # Ready the files for upload to OpenAI
-file_paths = ["pages/files/SJ_Parks_Rec_Info.pdf"]
+file_paths = ["pages/files/SJParks.pdf"]
 file_streams = [open(path, "rb") for path in file_paths]
 
 # Use the upload and poll SDK helper to upload the files, add them to the vector store,
@@ -41,7 +41,7 @@ assistant = client.beta.assistants.update(
 
 # Upload the user provided file to OpenAI
 message_file = client.files.create(
-    file=open("pages/files/SJ_Parks_Rec_Info.pdf", "rb"), purpose="assistants"
+    file=open("pages/files/SJParks.pdf", "rb"), purpose="assistants"
 )
 
 # Initialize chat history
