@@ -4,6 +4,8 @@ import streamlit as st
 import openai
 import os
 from openai import OpenAI, AssistantEventHandler
+import streamlit as st
+from PIL import Image
 
 # Set up OpenAI API key
 openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -52,6 +54,10 @@ if 'chat_history' not in st.session_state:
 # Display chat history
 # Streamlit UI
 st.title("Parks & Recreations Assistant Chat Interface")
+st.header("Want quick information on local parks in San Jose?")
+
+
+st.subheader("Ask me anything about picnic sites, capacity, pricing, timing, or park activites.")
 
 # Display chat history
 for message in st.session_state.chat_history:
@@ -62,7 +68,11 @@ for message in st.session_state.chat_history:
         st.write(f"**Assistant:** {content}")
 
 # User input
-user_input = st.text_input("Ask a question about the parks and recreations in San Jose:")
+user_input = st.text_input("Ask a question:")
+st.write('For example:')
+st.write('Which picnic sites have a capacity of more than 50 people?')
+st.write('Which parks have sports activities?')
+st.write('Which parks have the most picnic tables?')
 
 # Send message to assistant
 if st.button("Send"):
@@ -98,3 +108,4 @@ if st.button("Send"):
             event_handler=EventHandler(),
         ) as stream:
             stream.until_done()
+
