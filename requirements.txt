@@ -3,6 +3,5 @@ streamlit
 pandas
 numpy
 Image
-os
 base64
 requests
