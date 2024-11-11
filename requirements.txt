@@ -2,6 +2,3 @@ openai
 streamlit
 pandas
 numpy
-Image
-base64
-requests
