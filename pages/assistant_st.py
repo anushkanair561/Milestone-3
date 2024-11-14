@@ -55,7 +55,7 @@ if 'chat_history' not in st.session_state:
 # Streamlit UI
 st.title("Parks & Recreations Assistant Chat Interface")
 st.header("Want quick information on local parks in San Jose?")
-
+st.image("https://lp-cms-production.imgix.net/2021-09/shutterstock_441079591.jpg?w=1440&h=810&fit=crop&auto=format&q=75")
 
 st.subheader("Ask me anything about picnic sites, capacity, pricing, timing, or park activites.")
 
