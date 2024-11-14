@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import time
 
-st.markdown("## Welcome to ParkPal!")
+st.markdown("## Welcome to the Parks & Recreational Center Assistant!")
 st.sidebar.markdown("# Welcome Page")
 
 message = "#### If you are someone who enjoys the outdoors and is located in San Jose, I can help! "
