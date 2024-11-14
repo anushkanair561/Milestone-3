@@ -69,10 +69,10 @@ for message in st.session_state.chat_history:
 
 # User input
 user_input = st.text_input("Ask a question:")
-st.write('##### For example:')
-st.markdown('Which picnic sites have a capacity of more than 50 people?')
-st.markdown('Which parks have sports activities?')
-st.markdown('Which parks have the most picnic tables?')
+st.write('For example:')
+st.write('Which picnic sites have a capacity of more than 50 people?')
+st.write('Which parks have sports activities?')
+st.write('Which parks have the most picnic tables?')
 
 # Send message to assistant
 if st.button("Send"):
