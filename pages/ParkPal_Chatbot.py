@@ -53,11 +53,11 @@ if 'chat_history' not in st.session_state:
 
 # Display chat history
 # Streamlit UI
-st.title("Parks & Recreations Assistant Chat Interface")
-st.header("Want quick information on local parks in San Jose?")
+st.write("## Parks & Recreations Assistant")
+st.write("### Want quick information on local parks in San Jose?")
 st.image("https://lp-cms-production.imgix.net/2021-09/shutterstock_441079591.jpg?w=1440&h=810&fit=crop&auto=format&q=75")
 
-st.subheader("Ask me anything about picnic sites, capacity, pricing, timing, or park activites.")
+st.markdown(" Ask me anything about picnic sites, capacity, pricing, timing, or park activites.")
 
 # Display chat history
 for message in st.session_state.chat_history:
@@ -69,10 +69,10 @@ for message in st.session_state.chat_history:
 
 # User input
 user_input = st.text_input("Ask a question:")
-st.write('For example:')
-st.write('Which picnic sites have a capacity of more than 50 people?')
-st.write('Which parks have sports activities?')
-st.write('Which parks have the most picnic tables?')
+st.write('##### For example:')
+st.markdown('Which picnic sites have a capacity of more than 50 people?')
+st.markdown('Which parks have sports activities?')
+st.markdown('Which parks have the most picnic tables?')
 
 # Send message to assistant
 if st.button("Send"):

@@ -6,10 +6,10 @@ import time
 
 # Display chat history
 # Streamlit UI
-st.title("Make a Picnic Site Reservation")
+st.write("## Make a Picnic Site Reservation")
 
 st.image("https://www.ebparks.org/sites/default/files/styles/16x9_1000w/public/RO_GaryCrabbe-170423s_EBRPD-0303.jpg?h=c42ad62b&itok=Mq0juimf5")
-st.header("Select a park.")
+st.write("### Select a park.")
 
 def park_video(option):
    if option == "Almaden Lake Park":

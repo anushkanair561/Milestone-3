@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import time
 
-st.write("## Welcome to ParkPal!")
+st.title("Welcome to ParkPal!")
 st.sidebar.markdown("# Welcome Page")
 
 st.write("###### If you are someone who enjoys the outdoors and is located in San Jose, I can help! ")

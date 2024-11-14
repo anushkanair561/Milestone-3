@@ -11,8 +11,8 @@ def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
-st.title("Upload a Park Sign on the Spot")
-st.subheader("If you are at a park or pass by one and would like to know what facilities are available, upload a photo of the park sign.")
+st.write("## Upload a Park Sign on the Spot")
+st.write("### If you are at a park or pass by one and would like to know what facilities are available, upload a photo of the park sign.")
 uploaded_file = st.file_uploader("Choose a picture file", type=["png", "jpg", "jpeg"])
 
 openai.api_key = os.environ["OPENAI_API_KEY"]
