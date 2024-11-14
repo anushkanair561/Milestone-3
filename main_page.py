@@ -4,20 +4,19 @@ import pandas as pd
 import numpy as np
 import time
 
-st.markdown("## Welcome to the Parks & Recreational Center Assistant!")
+st.markdown("## Welcome to ParkPal!")
 st.sidebar.markdown("# Welcome Page")
 
 message = "#### If you are someone who enjoys the outdoors and is located in San Jose, I can help! "
 st.write(message)
 
-st.image("https://sanjosespotlight.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/07/28102515/DSC_0610-4-1160x560.jpg")
+st.image("park_pal_logo.png")
 
-st.divider()
+st.subheader( "", divider="orange")
 
-message = "#### Do you want to discover new places just for you? Click below!"
-st.write(message)
+st.subheader( "Do you want to discover new places just for you? Click below!", divider="orange")
 st.link_button("Parks & Rec in San Jose", "https://www.yelp.com/search?find_desc=Parks+And+Recreation&find_loc=San+Jose%2C+CA")
-st.divider()
+st.subheader( "", divider="orange")
 
 st.markdown("### San Jose Park Video")
 
