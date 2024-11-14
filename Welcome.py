@@ -4,21 +4,15 @@ import pandas as pd
 import numpy as np
 import time
 
-st.markdown("## Welcome to ParkPal!")
+st.write("## Welcome to ParkPal!")
 st.sidebar.markdown("# Welcome Page")
 
-message = "#### If you are someone who enjoys the outdoors and is located in San Jose, I can help! "
-st.write(message)
+st.write("###### If you are someone who enjoys the outdoors and is located in San Jose, I can help! ")
 
 st.image("park_pal_logo.png")
-
 st.subheader( "", divider="orange")
 
-st.subheader( "Do you want to discover new places just for you? Click below!", divider="orange")
-st.link_button("Parks & Rec in San Jose", "https://www.yelp.com/search?find_desc=Parks+And+Recreation&find_loc=San+Jose%2C+CA")
-st.subheader( "", divider="orange")
-
-st.markdown("### San Jose Park Video")
+st.write("### San Jose Park Video")
 
 def park_video(option):
    if option == "Almaden Lake Park":
@@ -46,10 +40,10 @@ option = st.selectbox(
 )
 
 park_video(option)
+st.subheader("", divider='orange')
 
-st.divider()
+st.write("### Additional Assisant Features")
 
-st.subheader('Additional Assisant Features', divider='grey')
 col1, col2, col3, col4 = st.columns(4)
 with col1:
    st.page_link("Welcome.py", label="Welcome", disabled=True)
