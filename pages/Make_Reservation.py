@@ -9,7 +9,10 @@ import time
 st.write("## Make a Picnic Site Reservation")
 
 st.image("https://www.ebparks.org/sites/default/files/styles/16x9_1000w/public/RO_GaryCrabbe-170423s_EBRPD-0303.jpg?h=c42ad62b&itok=Mq0juimf5")
-st.write("### Select a park.")
+
+st.subheader( "", divider="orange")
+
+st.write("#### Select a park:")
 
 def park_video(option):
    if option == "Almaden Lake Park":
@@ -30,7 +33,7 @@ def park_video(option):
    return st.link_button(option, SITE_URL)
 
 option = st.selectbox(
-    "Choose a park and access the reservation system",
+    "Choose a park to access the reservation system and find a facility or site in that park that you can book for an available date and time.",
     ("Almaden Lake Park", "Alum Rock Park", "Emma Prusch Farm Park", "Kelley Park", "Lake Cunningham Park", "Overfelt Gardens Park"),
     index=None,
     placeholder="Select park",
