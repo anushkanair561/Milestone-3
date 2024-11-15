@@ -12,7 +12,7 @@ st.image("https://www.ebparks.org/sites/default/files/styles/16x9_1000w/public/R
 
 st.subheader( "", divider="orange")
 
-st.write("#### Select a park:")
+st.write("#### Select a park to access the Reservation Page:")
 
 def park_video(option):
    if option == "Almaden Lake Park":

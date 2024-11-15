@@ -49,11 +49,11 @@ with col1:
    st.page_link("Welcome.py", label="Welcome", disabled=True)
 
 with col2:
-   st.page_link("pages/Make_Reservation.py", label="Make Reservation")
+   st.page_link("pages/Reserve_Picnic_Site.py", label="Reserve Picnic Site")
 
 with col3:
-   st.page_link("pages/ParkPal_Chatbot.py", label="ParkPal Chatbot")
+   st.page_link("pages/Ask_ParkPal.py", label="Ask ParkPal")
 
 with col4:
-   st.page_link("pages/Upload_Park_Sign.py", label="Upload Park Sign")
+   st.page_link("pages/Check_Park_Sign.py", label="Check Park Sign")
 

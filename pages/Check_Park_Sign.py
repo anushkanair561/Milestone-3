@@ -13,6 +13,7 @@ def encode_image(image_path):
 
 st.write("## Upload a Park Sign on the Spot")
 st.write("If you are at a park or pass by one and would like to know what facilities are available, upload a photo of the park sign. I will help you find the site and answer any questions you have about it!")
+st.image('https://preview.redd.it/alum-rock-park-got-a-new-sign-v0-w5b6yj6lgwed1.jpeg?width=640&crop=smart&auto=webp&s=42f67b98823d4728d1475f06ae138a869bd2947c')
 uploaded_file = st.file_uploader("Choose a picture file", type=["png", "jpg", "jpeg"])
 
 openai.api_key = os.environ["OPENAI_API_KEY"]
