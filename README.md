@@ -1,0 +1,10 @@
+ParkPal Demo Clip
+https://github.com/user-attachments/assets/ebd0bfd0-b345-4f5c-aa89-a0479e991745
+__________________________________________________________________________________________________________________________________________________________________________________
+Overview
+Chatbot assistant that helps users in San Jose looking for parks and recreational centers for their personal activities.
+__________________________________________________________________________________________________________________________________________________________________________________
+ParkPal, What
+
+https://youtu.be/cPYJTcTtxUE
+
